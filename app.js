@@ -145,7 +145,7 @@ app.post("/districts/", authenticationToken, async (request, response) => {
     INSERT INTO
        district (state_id, district_name, cases,cured ,active, deaths)
     values
-       (${stateId}, ${districtName}, ${cases}, ${cured}, ${active}, ${deaths});`;
+       (${stateId}, '${districtName}', ${cases}, ${cured}, ${active}, ${deaths});`;
   await database.run(postDistrictQuery);
   response.send("District Successfully Added");
 });
